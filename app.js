@@ -6,8 +6,12 @@ const loginInput = document.querySelector("input");
 const loginButton = document.querySelector("button");
 이렇게도 사용 가능
 */
-
-loginButton.addEventListener('click', ()=>{console.log(loginInput.value)});
+function loginBtnClick(){
+    const userName = loginInput.value;
+    console.log(userName);
+    
+}
+loginButton.addEventListener('click', loginBtnClick);
 
 
 
