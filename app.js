@@ -1,13 +1,23 @@
 const loginForm = document.querySelector("#login-form")
 const loginInput = document.querySelector("#login-form input"); 
 
+const nomadLink = document.querySelector("a");
+
 
 function onLoginSubmit(event){
     event.preventDefault(); //preventDefault 함수는 어떤 event의 브라우저의 기본행동이든지 발생되지 않도록 막는 것이다. 
     console.log(loginInput.value);
 }
+
+function handleLinkClick(event){  //js가 
+    event.preventDefault(); //링크로 가는걸 막아주고 event의 내부를 확인할 수 있음.
+    console.dir(event); //PointerEvent이벤트 오브젝트를 확인. 
+    
+}
+
 loginForm.addEventListener("submit",onLoginSubmit);
 /*
+
  onLoginSubmit()브라우저는 위에서 submit 이벤트가 발생하면 onLoginSubmit()함수를 실행하기도 하지만,
 onLoginSubmit() 브라우저는 브라우저 내에서 event로부터 정보를 잡아내서 
 이 argument 안에 정보를 주고 있다. 
@@ -28,4 +38,5 @@ loginForm.addEventListener("submit",jsInfo);
 
 
 */
+nomadLink.addEventListener("click",handleLinkClick);
 
