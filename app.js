@@ -1,18 +1,14 @@
-const loginForm = document.querySelector("#login-form")
+const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input"); 
-
-const nomadLink = document.querySelector("a");
-
+const greeting = document.querySelector('#greeting');
+const HIDDEN_CLASSNAME = "hidden";
 
 function onLoginSubmit(event){
     event.preventDefault(); //preventDefault 함수는 어떤 event의 브라우저의 기본행동이든지 발생되지 않도록 막는 것이다. 
-    console.log(loginInput.value);
-}
-
-function handleLinkClick(event){  //js가 
-    event.preventDefault(); //링크로 가는걸 막아주고 event의 내부를 확인할 수 있음.
-    console.dir(event); //PointerEvent이벤트 오브젝트를 확인. 
-    
+    const username = loginInput.value;
+    loginForm.classList.add(HIDDEN_CLASSNAME); // 폼(name)을 작성하고 css의 hidden(display:none) 이용하여 폼을 숨김.
+    greeting.innerText = `Hello, ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
 loginForm.addEventListener("submit",onLoginSubmit);
@@ -38,5 +34,5 @@ loginForm.addEventListener("submit",jsInfo);
 
 
 */
-nomadLink.addEventListener("click",handleLinkClick);
+
 
