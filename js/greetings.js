@@ -6,9 +6,9 @@ const USERNAME_KEY="username";
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 function onLoginSubmit(event){
     event.preventDefault(); //preventDefault 함수는 어떤 event의 브라우저의 기본행동이든지 발생되지 않도록 막는 것이다. 
+    loginForm.classList.add(HIDDEN_CLASSNAME); // 폼(name)을 작성하고 css의 hidden(display:none) 이용하여 폼을 숨김.
     const username = loginInput.value;
     localStorage.setItem(USERNAME_KEY,username);
-    loginForm.classList.add(HIDDEN_CLASSNAME); // 폼(name)을 작성하고 css의 hidden(display:none) 이용하여 폼을 숨김.
     paintGrettings(username);
 }
 function paintGrettings(username){
