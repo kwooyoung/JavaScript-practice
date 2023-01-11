@@ -2,6 +2,12 @@ const toDoForm = document.getElementById("todo-form");
 const toDoList = document.getElementById("todo-list");
 const toDoInput = toDoForm.querySelector("input");
 //const toDoInput = document.getElementById("#todo-form input");
+const toDos=[];
+
+
+function saveToDos(){
+    localStorage.setItem("todos",JSON.stringify(toDos));
+}
 
 function deleteToDo(event){ 
     const li = event.target.parentElement;//click event target에 접근, 그 부모 element인 li를 셀렉
@@ -22,10 +28,20 @@ function paintToDo(newTodo){
 function handleToDoSubmit(event){
     event.preventDefault();
     const newTodo = toDoInput.value; //toDoinput 입력값 newToDo 에 저장
-    toDoInput.value=""; //input value 비우기(입력값 비우기) 
+    toDoInput.value=""; //input value 비우기(입력값 비우기) \
+    toDos.push(newTodo);
     paintToDo(newTodo);
+    saveToDos();
 }
 toDoForm.addEventListener("submit",handleToDoSubmit);
 /*submit의 기본동작은 페이지를 새로고침하는 것이라서 
 event.preventDefault(); 함수를 통하여 기본동작을 막는다.
   */
+
+const savedToDos = localStorage.getItem(toDos);
+
+if(savedToDos !==null){
+    const parsedToDos = JSON.parse(savedToDos);
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);
+}
