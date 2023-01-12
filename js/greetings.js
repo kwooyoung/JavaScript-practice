@@ -17,9 +17,9 @@ function paintGrettings(username){
 }
 
 
-if(savedUsername ===null){
+if(savedUsername === null){
     loginForm.classList.remove(HIDDEN_CLASSNAME);
-    loginForm.addEventListener("submit",onLoginSubmit); 
+    loginForm.addEventListener("submit",onLoginSubmit);
 }else{
     paintGrettings(savedUsername);
 }
