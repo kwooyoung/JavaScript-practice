@@ -1,8 +1,11 @@
+API_KEY = "41e1bb3cf35ce5a5477995fee85713a8";
 function onGeoOK(position){
      const lat = position.coords.latitude;
-     const lng = position.coords.longitude;
+     const lon = position.coords.longitude;
      console.log("you live in", lat, lng);
-}
+     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+    console.log(url);
+    }
 function onGeoError(){
     alert("can't find yoiu . No weather for you.");
 }
