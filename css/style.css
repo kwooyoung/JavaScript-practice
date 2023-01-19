@@ -1,5 +1,10 @@
 #greeting{
     font-family: 'Poppins', sans-serif;
+  
+}
+#logout{
+    background: transparent;
+    border:none;
 }
 .hidden{
     display:none;

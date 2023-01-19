@@ -4,6 +4,7 @@ const greeting = document.querySelector('#greeting');
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY="username";
 const savedUsername = localStorage.getItem(USERNAME_KEY);
+const removeUserName = document.querySelector("#logout");
 function onLoginSubmit(event){
     event.preventDefault(); //preventDefault 함수는 어떤 event의 브라우저의 기본행동이든지 발생되지 않도록 막는 것이다. 
     loginForm.classList.add(HIDDEN_CLASSNAME); // 폼(name)을 작성하고 css의 hidden(display:none) 이용하여 폼을 숨김.
@@ -14,6 +15,9 @@ function onLoginSubmit(event){
 function paintGrettings(username){
     greeting.innerText = `Hello, ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
+    removeUserName.classList.remove(HIDDEN_CLASSNAME);
+
+
 }
 
 
@@ -24,6 +28,14 @@ if(savedUsername === null){
     paintGrettings(savedUsername);
 }
 
+
+
+function removeStorage() {
+localStorage.removeItem("username");
+window.location.reload();
+}
+
+removeUserName.addEventListener("click", removeStorage);
 /*
 
  onLoginSubmit()브라우저는 위에서 submit 이벤트가 발생하면 onLoginSubmit()함수를 실행하기도 하지만,
