@@ -35,24 +35,27 @@ required(필수) - 값을 넣지 않으면 html의 오류 문자가 발생
      maxlength="15"
      type="text"
      placeholder="what your name?" />
-    <button>Log In</button>
+    <button class="login">Log In</button>
 </form> 
-<h2 id="clock">00:00:00</h2>
+
+<div id ="weather">
+    <span class="C"></span>
+    <span class="city"></span>
+
+</div>
 <h1 id="greeting" class="hidden"></h1>
+<h2 id="clock">00:00:00</h2>
 <form id="todo-form">
     <input type="text" placeholder="Write a To do and Press Enter" required></form>
     <!--required = input값에 아무것도 안넣고 엔터 입력 시 작성이 되지 않음
     HTML에서 field를 보호(에러발생)--> 
+    
 <ul id="todo-list"></ul>
 <div id ="quote">
     <span class="quote"></span>
     <span class="author"></span>
     </div>
-    <div id ="weather">
-        <span class="C"></span>
-        <span></span>
-
-    </div>
+ 
 <script src="js/greetings.js"></script>
 <script src="js/clock.js"></script>
 <script src="js/quites.js"></script>
