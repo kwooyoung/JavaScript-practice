@@ -1,3 +1,6 @@
+#greeting{
+    text-align:top;
+}
 .hidden{
     display:none;
 }
@@ -13,3 +16,57 @@ img {
     z-index: -1;
     opacity:80%;
     }
+#todo-form{
+    text-align: center;
+    margin: 0 auto;
+}
+#todo-form input{
+    width: 400px;
+    height: 50px;
+    text-align: center;
+    border-bottom-color:white;
+    border:none;
+    background: transparent;
+    outline:none;
+}
+    ::placeholder{
+        color: #001110;;
+        font-family: 'Poppins', sans-serif;
+    }
+#clock{
+    text-align: center;
+    font-size:70px;
+}
+#todo-list ul{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+#todo-list li{
+    list-style: none;
+    text-align:center; 
+    font-size:50px;
+    font-family: 'Poppins', sans-serif;
+
+}
+#weather{
+     text-align: right; 
+    
+}
+
+.c{
+    
+}
+#quote{
+     bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    position:relative;
+    font-weight: bold;
+}
+.quote{
+    
+}
+.author{
+    margin-left: 20px;
+}
